@@ -1,1 +1,1 @@
-worker: node nemophore.jss
+worker: node nemophore.js
