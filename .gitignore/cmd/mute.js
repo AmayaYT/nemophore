@@ -8,7 +8,7 @@ module.exports.run = async (client, msg, args) => {
 
   let tomute = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
   if(!tomute) return msg.channel.send(`**${msg.member.user.username}**, je ne trouve pas l'utilisateur.`);
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return msg.channel.send(`**${msg.member.user.username}**, je ne peux pas rendre muet un Administrateur !`);
+  if(tomute.hasPermission("ADMINISTRATOR")) return msg.channel.send(`**${msg.member.user.username}**, je ne peux pas rendre muet un Administrateur !`);
   let muterole = msg.guild.roles.find(`name`, "Muted");
 
       // Création du rôle Muted, si il n'y en a pas.
